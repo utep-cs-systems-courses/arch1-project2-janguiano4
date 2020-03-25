@@ -10,13 +10,13 @@ __interrupt_vec(WDT_VECTOR) WDT() {
   static char blink_count = 0;
   if(++blink_count == tempo) {
     if(current_switch == 1) {
-      sadness_and_sorrow();
+      song_1();
     }
     else if(current_switch == 2) {
-      lavender_town();
+      song_2();
     }
     else if(current_switch == 3) {
-      lavender_town();
+      song_2();
     }
     blink_count = 0;
   }

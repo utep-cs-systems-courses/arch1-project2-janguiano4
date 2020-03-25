@@ -1,8 +1,8 @@
 #ifndef stateMachine_include
 #define stateMachine_included
 
-void sadness_and_sorrow();
-void lavender_town();
+void song_1();
+void song_2();
 void mspOff();
 
 #endif

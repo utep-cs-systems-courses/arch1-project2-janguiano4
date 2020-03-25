@@ -32,7 +32,7 @@ void ledOff() {
   led_update();
 }
 
-void sadness_and_sorrow() {
+void song_1() {
   static char change = 0;
   static char flag = 0;
   switch (change) {
@@ -84,77 +84,11 @@ void sadness_and_sorrow() {
     tempo = 60;
     ledOn();
     break;
-  case 8:
-    change = 9;
-    buzzer_set_period(987);
-    tempo = 60;
-    redLed();
-    break;
-  case 9:
-    change = 10;
-    buzzer_set_period(1046);
-    tempo = 60;
-    greenLed();
-    break;
-  case 10:
-    change = 11;
-    buzzer_set_period(1174);
-    tempo = 60;
-    redLed();
-    break;
-  case 11:
-    change = 12;
-    buzzer_set_period(784);
-    tempo = 250;
-    greenLed();
-    break;
-  case 12:
-    change = 13;
-    buzzer_set_period(1318);
-    tempo = 250;
-    redLed();
-    break;
-  case 13:
-    if(flag == 0) {
-      change = 0;
-      flag = 1;
-    }
-    else {
-      change = 14;
-    }
-    buzzer_set_period(1174);
-    tempo = 250;
-    ledOn();
-    break;
-  case 14:
-    change = 15;
-    buzzer_set_period(880);
-    tempo = 250;
-    ledOn();
-    break;
-  case 15:
-    change = 16;
-    buzzer_set_period(880);
-    tempo = 250;
-    ledOn();
-    break;
-  case 16:
-    change = 17;
-    buzzer_set_period(0);
-    tempo = 250;
-    ledOff();
-    break;
-  case 17:
-    change = 0;
-    buzzer_set_period(0);
-    tempo = 30;
-    ledOff();
-    flag = 0;
-    break;
+   
   }
 }
 
-void lavender_town(){
+void song_2(){
   static char note = 0;
   switch(note) {
   case 0:
