@@ -13,19 +13,19 @@ static char
 switch_update_interrupt_sense()
 {
   char p1val = P2IN;
-
-  P2IES |= (p1val & SWITCHES);
-  P2IES &= (p1val | ~SWITCHES);
+  // update switch interrupt to detect changes from current buttons 
+  P2IES |= (p1val & SWITCHES); // if switch up, sense down
+  P2IES &= (p1val | ~SWITCHES); // if switch down, sense up
   return p1val;
 }
 
 void
-switch_init()
+switch_init() //setup switch
 {
-  P2REN |= SWITCHES;
-  P2IE = SWITCHES;
-  P2OUT |= SWITCHES;
-  P2DIR &= ~SWITCHES;
+  P2REN |= SWITCHES; //enables resistors for switches
+  P2IE = SWITCHES; // enable interrupts from switches
+  P2OUT |= SWITCHES; //pull-ups for switches
+  P2DIR &= ~SWITCHES; // set switches bits for input
   switch_update_interrupt_sense();
   led_update();
 }

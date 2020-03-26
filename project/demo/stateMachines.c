@@ -38,8 +38,8 @@ void song_1() {
   switch (change) {
   case 0:
     change = 1;
-    buzzer_set_period(987);
-    tempo = 30;
+    buzzer_set_period(987);  // 987
+    tempo = 30; // the speed on to switch to the next note
     greenLed();
     break;
   case 1:
